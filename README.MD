@@ -1,3 +1,29 @@
+This repository was forked from "https://github.com/john-smilga/node-express-course"
+
+Youtube link is "https://www.youtube.com/watch?v=qwfE7fSVaZM&t=10550s"
+
+This repo is just for educational purposes - node.js/express.js
+
+To install npm packages, open the terminal in project folder and type the command "npm install"
+
+If packages are outdated or broken, you can delete the existing dependencies section in package.json and install them one by one like this: "npm install ", example: "npm install express"
+
+!!! Do not forget to set up the .env file !!!
+
+In the .env file, you need to keep your secrets which is db_connection_string, jwt_secret, jwt_lifetime and port. Example in following line:
+
+MONGO_URI=connection_string
+
+JWT_SECRET=your_secret
+
+JWT_LIFETIME=your_jwt_lifetime // exp: 10d is equal to 10 days.
+
+PORT=3000 // in development
+
+
+/**************************************************************************************************************************/
+
+
 #### Setup
 
 ```bash
