@@ -9,6 +9,11 @@ const cors = require("cors");
 const xss = require("xss-clean");
 const rateLimiter = require("express-rate-limit");
 
+// Swagger / OpenAPI
+const swaggerUI = require("swagger-ui-express");
+const YAML = require("yamljs");
+const swaggerDocument = YAML.load("./openapi-specification.yaml");
+
 const express = require("express");
 const app = express();
 
@@ -40,6 +45,8 @@ app.use(xss());
 
 // routes
 app.get("/", (req, res) => res.send("Hello World"));
+
+app.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", authenticateUser, jobsRouter);
