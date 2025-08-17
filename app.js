@@ -43,6 +43,17 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
+// Trust Proxy Test - IP Test
+app.get("/ip-test", (req, res) => {
+  res.json({
+    ip: req.ip,
+    ips: req.ips,
+    protocol: req.protocol,
+    headers: req.headers["x-forwarded-for"],
+    forwardedProto: req.headers["x-forwarded-proto"],
+  });
+});
+
 // routes
 app.get("/", (req, res) => res.send("Hello World"));
 
