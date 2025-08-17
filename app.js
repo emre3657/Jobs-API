@@ -30,7 +30,7 @@ const jobsRouter = require("./routes/jobs");
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
-app.set("trust proxy", 2);
+app.set("trust proxy", 3);
 app.use(
   rateLimiter({
     windowMs: 15 * 60 * 1000, // 15 minutes
