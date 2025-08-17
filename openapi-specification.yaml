@@ -3,7 +3,9 @@ info:
   title: Jobs API
   contact: {}
   version: "1.0"
-servers: []
+servers:
+  - url: https://jobs-api-hhgd.onrender.com/api/v1
+    description: Production server
 
 paths:
   /auth/register:
