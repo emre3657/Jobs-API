@@ -30,7 +30,7 @@ const jobsRouter = require("./routes/jobs");
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
-app.set("trust proxy", 1);
+app.set("trust proxy", 2);
 app.use(
   rateLimiter({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -46,11 +46,12 @@ app.use(xss());
 // Trust Proxy Test - IP Test
 app.get("/ip-test", (req, res) => {
   res.json({
+    remoteAddress: req.socket.remoteAddress,
     ip: req.ip,
     ips: req.ips,
     protocol: req.protocol,
-    headers: req.headers["x-forwarded-for"],
-    forwardedProto: req.headers["x-forwarded-proto"],
+    xff: req.headers["x-forwarded-for"],
+    xfp: req.headers["x-forwarded-proto"],
   });
 });
 
