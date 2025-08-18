@@ -44,6 +44,8 @@ app.use(cors());
 app.use(xss());
 
 // routes
+app.get("/", (req, res) => res.redirect("/docs"));
+
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.use("/api/v1/auth", authRouter);
