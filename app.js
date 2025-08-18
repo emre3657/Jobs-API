@@ -43,21 +43,7 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
-// Trust Proxy Test - IP Test
-app.get("/ip-test", (req, res) => {
-  res.json({
-    remoteAddress: req.socket.remoteAddress,
-    ip: req.ip,
-    ips: req.ips,
-    protocol: req.protocol,
-    xff: req.headers["x-forwarded-for"],
-    xfp: req.headers["x-forwarded-proto"],
-  });
-});
-
 // routes
-app.get("/", (req, res) => res.send("Hello World"));
-
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.use("/api/v1/auth", authRouter);
