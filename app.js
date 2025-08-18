@@ -58,7 +58,7 @@ app.get("/ip-test", (req, res) => {
 // routes
 app.get("/", (req, res) => res.send("Hello World"));
 
-app.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", authenticateUser, jobsRouter);
