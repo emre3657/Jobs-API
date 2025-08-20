@@ -1,6 +1,8 @@
-This repository was forked from "https://github.com/john-smilga/node-express-course"
+## This API is now LIVE at https://jobs-api-fw93.onrender.com
 
-Youtube link is "https://www.youtube.com/watch?v=qwfE7fSVaZM&t=10550s"
+This repository was forked from https://github.com/john-smilga/node-express-course
+
+Youtube link is https://www.youtube.com/watch?v=qwfE7fSVaZM&t=10550s
 
 This repo is just for educational purposes - node.js/express.js
 
@@ -19,10 +21,6 @@ JWT_SECRET=your_secret
 JWT_LIFETIME=your_jwt_lifetime // exp: 10d is equal to 10 days.
 
 PORT=3000 // in development
-
-
-/**************************************************************************************************************************/
-
 
 #### Setup
 
